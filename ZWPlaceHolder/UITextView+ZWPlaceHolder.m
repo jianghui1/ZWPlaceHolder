@@ -15,7 +15,6 @@ static const void *zw_placeHolderKey;
 @end
 @implementation UITextView (ZWPlaceHolder)
 +(void)load{
-    [super load];
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"layoutSubviews")),
                                    class_getInstanceMethod(self.class, @selector(zwPlaceHolder_swizzling_layoutSubviews)));
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"dealloc")),
